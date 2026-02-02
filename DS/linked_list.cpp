@@ -1,5 +1,4 @@
 #include "linked_list.h"
-#include <cstddef>
 #include <initializer_list>
 
 
@@ -17,6 +16,8 @@ void SingleLinkedList<Dtype>::Append(Dtype value){
   node->next = nullptr;
   m_CurrentNode->next = node;
   m_CurrentNode = node;
+
+  m_Size++;
    
 }
 
@@ -47,6 +48,8 @@ void SingleLinkedList<Dtype>::Delete(){
   // so delete the last node
   delete to_delete_ptr;
 
+  m_Size = 0;
+
 }
 
 template<typename Dtype>
@@ -63,6 +66,8 @@ void SingleLinkedList<Dtype>::Insert(Dtype value , UINT64 index){
   SingleLLNode<Dtype>* temp_ptr = iter->next;
   iter->next = node;
   node->next = temp_ptr;
+
+  m_Size++;
 
 }
 
@@ -83,7 +88,19 @@ void SingleLinkedList<Dtype>::Remove(UINT64 index){
 
   iter->next = temp_ptr;
 
+  m_Size--;
+
 }
 
+// template <typename Dtype>
+// SingleLLNode<Dtype>* SingleLinkedList<Dtype>::GetLast(){
+  
+//   SingleLLNode<Dtype>* iter = m_HeadNode;
+
+//   for(auto i{0}; i < m_Size ; i++){
+
+//   }
+
+// }
 
 
