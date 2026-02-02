@@ -92,15 +92,15 @@ void SingleLinkedList<Dtype>::Remove(UINT64 index){
 
 }
 
-// template <typename Dtype>
-// SingleLLNode<Dtype>* SingleLinkedList<Dtype>::GetLast(){
+template <typename Dtype>
+SingleLLNode<Dtype>* SingleLinkedList<Dtype>::GetLast(){
   
-//   SingleLLNode<Dtype>* iter = m_HeadNode;
+  SingleLLNode<Dtype>* iter = m_HeadNode;
 
-//   for(auto i{0}; i < m_Size ; i++){
-
-//   }
-
-// }
+  for(auto i{0}; i < m_Size ; i++){
+    iter = iter->next;
+  }
+  return iter;
+}
 
 
