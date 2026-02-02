@@ -46,7 +46,7 @@ class SingleLinkedList{
 private:
   SingleLLNode<Dtype> m_HeadNode;
   SingleLLNode<Dtype>* m_CurrentNode; 
-  size_t size;
+  size_t m_Size;
 
 public:
 
@@ -60,7 +60,7 @@ public:
   void Remove(UINT64 index);
   UINT32 Find(Dtype value); // find the specified element and returns the index
 
-  size_t GetLength(){ return size; }
+  size_t GetLength(){ return m_Size; }
   SingleLLNode<Dtype>* GetFirst() { return m_HeadNode->next; }
   SingleLLNode<Dtype>* GetLast();
   void PrintList();
