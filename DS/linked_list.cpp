@@ -60,7 +60,7 @@ void SingleLinkedList<Dtype>::Insert(Dtype value , UINT64 index){
   node->next = nullptr;
 
   SingleLLNode<Dtype>* iter = m_HeadNode; // points to first element
-  for(auto i{0} ; i < index-1 ; i++){
+  for(size_t i = 0 ; i < index-1 ; i++){
     iter = iter->next;
   }
   SingleLLNode<Dtype>* temp_ptr = iter->next;
@@ -76,7 +76,7 @@ template<typename Dtype>
 void SingleLinkedList<Dtype>::Remove(UINT64 index){
 
   SingleLLNode<Dtype>* iter = m_HeadNode;
-  for(auto i{0}; i < index-1 ; i++){
+  for(size_t i = 0; i < index-1 ; i++){
     iter = iter->next;
   }
 
@@ -97,7 +97,7 @@ SingleLLNode<Dtype>* SingleLinkedList<Dtype>::GetLast(){
   
   SingleLLNode<Dtype>* iter = m_HeadNode;
 
-  for(auto i{0}; i < m_Size ; i++){
+  for(size_t i = 0; i < m_Size ; i++){
     iter = iter->next;
   }
   return iter;
