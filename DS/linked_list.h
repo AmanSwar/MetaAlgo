@@ -55,14 +55,15 @@ public:
   ~SingleLinkedList();
 
   void Append(Dtype value);
-  void Insert(Dtype value , UINT32 index);
+  void Insert(Dtype value , UINT64 index);
   void Delete(); // delete the entire linkedList
-  void Remove(UINT32 index);
+  void Remove(UINT64 index);
   UINT32 Find(Dtype value); // find the specified element and returns the index
 
   size_t GetLength(){ return size; }
-  SingleLinkedList<Dtype>* GetFirst() { return HeadNode->next; }
+  SingleLinkedList<Dtype>* GetFirst() { return m_HeadNode->next; }
   SingleLinkedList<Dtype>* GetLast();
+  void PrintList();
 
   void Reverse();
   void Sort();
