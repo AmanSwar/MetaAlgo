@@ -61,8 +61,8 @@ public:
   UINT32 Find(Dtype value); // find the specified element and returns the index
 
   size_t GetLength(){ return size; }
-  SingleLinkedList<Dtype>* GetFirst() { return m_HeadNode->next; }
-  SingleLinkedList<Dtype>* GetLast();
+  SingleLLNode<Dtype>* GetFirst() { return m_HeadNode->next; }
+  SingleLLNode<Dtype>* GetLast();
   void PrintList();
 
   void Reverse();
