@@ -44,13 +44,14 @@ template <typename Dtype>
 class SingleLinkedList{
 
 private:
-  SingleLLNode<Dtype>* HeadNode;
+  SingleLLNode<Dtype> m_HeadNode;
+  SingleLLNode<Dtype>* m_CurrentNode; 
   size_t size;
 
 public:
 
   // init LinkedList with given unintializer list
-  SingleLinkedList(std::initializer_list<Dtype> initArray);
+  SingleLinkedList(std::initializer_list<Dtype>& initArray);
   ~SingleLinkedList();
 
   void Append(Dtype value);
@@ -70,8 +71,8 @@ public:
 
 private:
 
-  void _Init(); // function to be called inside the constructor for init LinkedList from inititalizer list
-  
+  void _Init(std::initializer_list<Dtype>& initArray); // function to be called inside the constructor for init LinkedList from inititalizer list
+
 
 
 };
