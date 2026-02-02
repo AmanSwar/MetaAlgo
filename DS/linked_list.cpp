@@ -66,3 +66,24 @@ void SingleLinkedList<Dtype>::Insert(Dtype value , UINT64 index){
 
 }
 
+
+template<typename Dtype>
+void SingleLinkedList<Dtype>::Remove(UINT64 index){
+
+  SingleLLNode<Dtype>* iter = m_HeadNode;
+  for(auto i{0}; i < index-1 ; i++){
+    iter = iter->next;
+  }
+
+  SingleLLNode<Dtype> to_delete_ptr = iter->next;
+
+  SingleLLNode<Dtype> temp_ptr = to_delete_ptr->next;
+
+  delete to_delete_ptr;
+
+  iter->next = temp_ptr;
+
+}
+
+
+
