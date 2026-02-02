@@ -1,6 +1,7 @@
 #include "linked_list.h"
 #include <initializer_list>
 
+#include <iostream>
 
 template<typename Dtype>
 SingleLinkedList<Dtype>::SingleLinkedList(std::initializer_list<Dtype>& initArray){
@@ -103,4 +104,14 @@ SingleLLNode<Dtype>* SingleLinkedList<Dtype>::GetLast(){
   return iter;
 }
 
+template <typename Dtype>
+void SingleLinkedList<Dtype>::PrintList(){
 
+  SingleLLNode<Dtype>* iter = m_HeadNode;
+
+  for(size_t i = 0 ; i < m_Size ; i++){
+    iter = iter->next;
+    std::cout << iter->value << " ";
+  }
+  
+}
